@@ -8,11 +8,11 @@ public class TP03 {
         int T = scanner.nextInt();
         int N = scanner.nextInt();
 
-        int totalOrang = T + 1;
+        int totalOrang = N + 1;
 
-        int jatahPermen = N / totalOrang;
+        int jatahPermen = T / totalOrang;
 
-        int sisaPermen = N % totalOrang;
+        int sisaPermen = T % totalOrang;
 
         System.out.println(jatahPermen);
         System.out.println(sisaPermen);
