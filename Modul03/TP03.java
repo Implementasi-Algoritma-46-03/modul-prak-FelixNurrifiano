@@ -16,7 +16,5 @@ public class TP03 {
 
         System.out.println(jatahPermen);
         System.out.println(sisaPermen);
-
-        scanner.close();
     }
 }
