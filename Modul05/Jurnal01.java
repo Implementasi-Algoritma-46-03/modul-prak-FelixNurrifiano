@@ -36,7 +36,6 @@ public class Jurnal01 {
 
         int totalHarga = jumlah * harga;
 
-        // Format angka dengan titik ribuan, lalu tambahkan "Rp."
         String totalHargaFormatted = String.format("%,d", totalHarga).replace(',', '.');
 
         System.out.println(namaMakanan + " " + jumlah + " buah, total harga Rp. " + totalHargaFormatted);
