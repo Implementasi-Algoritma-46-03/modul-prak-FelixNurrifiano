@@ -3,53 +3,38 @@ import java.util.Scanner;
 public class TP03 {
 
     public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        String Bangundatar = sc.nextLine().toLowerCase();
+        double pi = 3.14; 
+        double luas = 0, keliling = 0; 
+        switch (Bangundatar) {
 
-        String bangun = input.nextLine();
-        double luas = 0, keliling = 0;
-
-        switch (bangun) {
-            case "Persegi":
-                int sisi = input.nextInt();
+            case "persegi" : 
+                int sisi = sc.nextInt();
                 luas = sisi * sisi;
                 keliling = 4 * sisi;
+                System.out.print((int)luas+" "+(int)keliling);
                 break;
-
-            case "Persegi Panjang":
-                int panjang = input.nextInt();
-                int lebar = input.nextInt();
+            case "persegi panjang":
+                int panjang = sc.nextInt();
+                int lebar = sc.nextInt();
                 luas = panjang * lebar;
                 keliling = 2 * (panjang + lebar);
+                System.out.print((int)luas + " " + (int)keliling);
                 break;
-
-            case "Segitiga":
-                int alas = input.nextInt();
-                int tinggi = input.nextInt();
-                luas = (alas * tinggi) / 2.0;
-                double miring = Math.sqrt(alas * alas + tinggi * tinggi);
-                keliling = alas + tinggi + (int) miring; // 🔧 ubah jadi int agar hasil keliling bulat
+            case "segitiga" :
+                int alas = sc.nextInt();
+                int tinggi = sc.nextInt();
+                luas = 0.5 * alas * tinggi;
+                keliling = alas + tinggi + Math.sqrt(alas * alas + tinggi * tinggi);
+                System.out.print((int)luas+ " " +(int)keliling);
                 break;
-
-            case "Lingkaran":
-                int diameter = input.nextInt();
-                double r = diameter / 2.0;
-                luas = 3.14 * r * r;
-                keliling = 3.14 * diameter;
+            case "lingkaran" :
+                int diameter = sc.nextInt();
+                luas = pi * (diameter / 2) * (diameter / 2);
+                keliling = pi * diameter;
+                System.out.printf("%.2f %.2f\n", luas, keliling);
                 break;
-
-            default:
-                System.out.println("Bangun datar tidak dikenali");
-                input.close();
-                return;
-        }
-
-        // Tampilkan tanpa desimal jika hasilnya bilangan bulat
-        if (luas % 1 == 0 && keliling % 1 == 0) {
-            System.out.printf("%.0f %.0f%n", luas, keliling);
-        } else {
-            System.out.printf("%.2f %.2f%n", luas, keliling);
-        }
-
-        input.close();
     }
+}
 }
