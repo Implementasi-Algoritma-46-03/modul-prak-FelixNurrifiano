@@ -1,76 +1,69 @@
 import java.util.Scanner;
 
 public class Jurnal02 {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        String hari = scanner.nextLine().trim();
-        int n = scanner.nextInt();
+        String hariAwal = input.nextLine();
+        int n = input.nextInt();
 
-        int indexHari = -1;
-
-        switch (hari.toLowerCase()) {
-            case "senin":
-                indexHari = 0;
+        int namaHari;
+        switch (hariAwal) {
+            case "Senin":
+                namaHari = 0;
                 break;
-            case "selasa":
-                indexHari = 1;
+            case "Selasa":
+                namaHari = 1;
                 break;
-            case "rabu":
-                indexHari = 2;
+            case "Rabu":
+                namaHari = 2;
                 break;
-            case "kamis":
-                indexHari = 3;
+            case "Kamis":
+                namaHari = 3;
                 break;
-            case "jumat":
-                indexHari = 4;
+            case "Jumat":
+                namaHari = 4;
                 break;
-            case "sabtu":
-                indexHari = 5;
+            case "Sabtu":
+                namaHari = 5;
                 break;
-            case "minggu":
-                indexHari = 6;
+            case "Minggu":
+                namaHari = 6;
                 break;
             default:
-                System.out.println("Nama hari tidak valid.");
-                scanner.close();
+                System.out.println("Hari tidak valid");
                 return;
         }
 
-        int indexHariBaru = (indexHari + n) % 7;
+        int indexHasil = (namaHari + n) % 7;
 
-        String hariBaru;
-
-        switch (indexHariBaru) {
+        String hasilHari;
+        switch (indexHasil) {
             case 0:
-                hariBaru = "Senin";
+                hasilHari = "Senin";
                 break;
             case 1:
-                hariBaru = "Selasa";
+                hasilHari = "Selasa";
                 break;
             case 2:
-                hariBaru = "Rabu";
+                hasilHari = "Rabu";
                 break;
             case 3:
-                hariBaru = "Kamis";
+                hasilHari = "Kamis";
                 break;
             case 4:
-                hariBaru = "Jumat";
+                hasilHari = "Jumat";
                 break;
             case 5:
-                hariBaru = "Sabtu";
+                hasilHari = "Sabtu";
                 break;
             case 6:
-                hariBaru = "Minggu";
+                hasilHari = "Minggu";
                 break;
             default:
-                hariBaru = "Error";
-                break;
+                hasilHari = "Hari tidak valid"; 
         }
 
-        System.out.println(hariBaru);
-
-        scanner.close();
+        System.out.println(hasilHari);
     }
 }

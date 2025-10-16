@@ -1,15 +1,14 @@
 import java.util.Scanner;
 
 public class Jurnal03 {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int A = scanner.nextInt();
-        char O = scanner.next().charAt(0);
-        int B = scanner.nextInt();
+        int A = scanner.nextInt();       // bilangan pertama
+        char O = scanner.next().charAt(0); // tanda operasi
+        int B = scanner.nextInt();       // bilangan kedua
 
-        switch (O) {
+     switch (O) {
             case '+':
                 System.out.println(A + B);
                 break;
@@ -20,15 +19,18 @@ public class Jurnal03 {
                 System.out.println(A * B);
                 break;
             case '/':
-                // Pembagian hasilnya riil (double)
                 if (B == 0) {
-                    System.out.println("Error: Pembagian dengan nol tidak diperbolehkan.");
+                    System.out.println("Error: Division by zero");
                 } else {
-                    double hasil = ((double) A / B);
-                    System.out.printf("%.7f", hasil );
+                    double hasil = (double) A / B;
+                    // cetak dengan 7 angka di belakang koma (dibulatkan)
+                    System.out.printf("%.7f%n", hasil);
                 }
                 break;
             default:
-                System.out.println("Operator tidak valid.");
+                System.out.println("Operator tidak valid");
         }
+
+        scanner.close();
     }
+}
