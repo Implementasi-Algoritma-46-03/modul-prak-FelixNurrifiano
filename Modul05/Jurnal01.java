@@ -1,43 +1,46 @@
 import java.util.Scanner;
 
 public class Jurnal01 {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        
-        int kode = input.nextInt();
-        int jumlah = input.nextInt();
+    public static void main(final String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        String namaMenu = "";
-        int hargaSatuan = 0;
+        int kodeMenu = scanner.nextInt();
+        int jumlah = scanner.nextInt();
 
-        switch (kode) {
+        String namaMakanan = "";
+        int harga = 0;
+
+        switch (kodeMenu) {
             case 1:
-                namaMenu = "Nasi Goreng";
-                hargaSatuan = 15000;
+                namaMakanan = "Nasi Goreng";
+                harga = 15000;
                 break;
             case 2:
-                namaMenu = "Mie Goreng / Nyemek";
-                hargaSatuan = 18000;
+                namaMakanan = "Mie Goreng / Nyemek";
+                harga = 18000;
                 break;
             case 3:
-                namaMenu = "Kwetiau Goreng / Nyemek";
-                hargaSatuan = 20000;
+                namaMakanan = "Kwetiau Goreng / Nyemek";
+                harga = 20000;
                 break;
             case 4:
-                namaMenu = "Capcay Goreng / Kuah";
-                hargaSatuan = 23000;
+                namaMakanan = "Capcay Goreng / Kuah";
+                harga = 23000;
                 break;
             default:
-                System.out.println("Kode menu tidak valid!");
-                input.close();
+                System.out.println("Kode menu tidak tersedia.");
+                scanner.close();
                 return;
         }
 
-        int totalHarga = hargaSatuan * jumlah;
+        int totalHarga = jumlah * harga;
 
-        System.out.println(namaMenu + " " + jumlah + " buah, total harga Rp " + totalHarga);
+        // Format angka dengan titik ribuan, lalu tambahkan "Rp."
+        String totalHargaFormatted = String.format("%,d", totalHarga).replace(',', '.');
 
-        input.close();
+        System.out.println(namaMakanan + " " + jumlah + " buah, total harga Rp. " + totalHargaFormatted);
+
+        scanner.close();
     }
 }
