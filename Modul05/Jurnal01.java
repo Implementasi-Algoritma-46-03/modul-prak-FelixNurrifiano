@@ -44,3 +44,4 @@ public class Jurnal01 {
         scanner.close();
     }
 }
+
