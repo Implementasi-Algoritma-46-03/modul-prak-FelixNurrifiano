@@ -27,7 +27,7 @@ public class TP03 {
                 int tinggi = input.nextInt();
                 luas = (alas * tinggi) / 2.0;
                 double miring = Math.sqrt(alas * alas + tinggi * tinggi);
-                keliling = alas + tinggi + miring;
+                keliling = alas + tinggi + (int) miring; // 🔧 ubah jadi int agar hasil keliling bulat
                 break;
 
             case "Lingkaran":
@@ -43,7 +43,7 @@ public class TP03 {
                 return;
         }
 
-        // Jika hasilnya bilangan bulat, tampilkan tanpa desimal
+        // Tampilkan tanpa desimal jika hasilnya bilangan bulat
         if (luas % 1 == 0 && keliling % 1 == 0) {
             System.out.printf("%.0f %.0f%n", luas, keliling);
         } else {
