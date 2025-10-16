@@ -3,44 +3,20 @@ import java.util.Scanner;
 public class Jurnal01 {
 
     public static void main(final String[] args) {
-        Scanner scanner = new Scanner(System.in);
+       Scanner sc = new Scanner(System.in);
+       int M = sc.nextInt();
+       int N = sc.nextInt();
+       String makanan = ".000";
+       switch (M) {
+        case 1 : System.out.println("Nasi Goreng "  +  N  +  " buah, total harga Rp. "  +  N * 15 + (""+ makanan));
+        break;
+        case 2 : System.out.println("Mie Goreng / Nyemek "  +  N  +  " buah, total harga Rp. "  +  N * 18 + (""+ makanan));
+        break;
+        case 3 : System.out.println("Kwetiau Goreng / Nyemek "  +  N  +  " buah, total harga Rp. "  +  N * 20 + (""+ makanan));
+        break;
+        case 4 : System.out.println("Capcay Goreng / Kuah "  +  N  +  " buah, total harga Rp. "  +  N * 23 + (""+ makanan));
+        break;
 
-        int kodeMenu = scanner.nextInt();
-        int jumlah = scanner.nextInt();
-
-        String namaMakanan = "";
-        int harga = 0;
-
-        switch (kodeMenu) {
-            case 1:
-                namaMakanan = "Nasi Goreng";
-                harga = 15000;
-                break;
-            case 2:
-                namaMakanan = "Mie Goreng / Nyemek";
-                harga = 18000;
-                break;
-            case 3:
-                namaMakanan = "Kwetiau Goreng / Nyemek";
-                harga = 20000;
-                break;
-            case 4:
-                namaMakanan = "Capcay Goreng / Kuah";
-                harga = 23000;
-                break;
-            default:
-                System.out.println("Kode menu tidak tersedia.");
-                scanner.close();
-                return;
-        }
-
-        int totalHarga = jumlah * harga;
-
-        String totalHargaFormatted = String.format("%,d", totalHarga).replace(',', '.');
-
-        System.out.println(namaMakanan + " " + jumlah + " buah, total harga Rp. " + totalHargaFormatted);
-
-        scanner.close();
-    }
+       }
 }
-
+}
