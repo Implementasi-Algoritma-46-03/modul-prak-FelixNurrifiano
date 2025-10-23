@@ -5,13 +5,17 @@ public class Jurnal01 {
     public static void main(final String[] args) {
         Scanner input = new Scanner(System.in);
 
-
         String nama1 = input.nextLine();
         String nama2 = input.nextLine();
         int waktu = input.nextInt();
 
-        String sapaan = tentukanSapaan(waktu);
+        if (waktu < 0 || waktu > 24) {
+            System.out.println("Waktu tidak valid. Masukkan angka antara 0 sampai 24.");
+            input.close();
+            return;
+        }
 
+        String sapaan = tentukanSapaan(waktu);
 
         sapaMahasiswa(nama1, sapaan);
         sapaMahasiswa(nama2, sapaan);
