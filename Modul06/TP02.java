@@ -12,7 +12,6 @@ public class TP02 {
         scanner.close();
     }
 
-
     public static String hapusVokal(String input) {
         StringBuilder output = new StringBuilder();
         
