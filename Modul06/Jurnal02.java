@@ -1,61 +1,35 @@
 import java.util.Scanner;
 
 public class Jurnal02 {
-
     public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        String lirik = input.nextLine();
-
-        int panjang = lirik.length();
-
-
-        char vokalPengganti = tentukanVokal(panjang);
-
-
-        String hasil = ubahVokal(lirik, vokalPengganti);
-
-
-        System.out.println(hasil);
-
-        input.close();
+        Scanner s = new Scanner(System.in);
+        String lirik = s.nextLine();
+        String hasil1 = vokalKecil(lirik);
+        String hasil2 = vokalBesar(hasil1);
+        System.out.println(hasil2);
     }
 
-
-    public static char tentukanVokal(int panjang) {
-        int sisa = panjang % 5;
-
-        switch (sisa) {
-            case 0:
-                return 'a';
-            case 1:
-                return 'e';
-            case 2:
-                return 'i';
-            case 3:
-                return 'o';
-            default:
-                return 'u';
-        }
+    private static String vokalKecil(String teks) {
+         int panjang = teks.length();
+         int panjangTeks = panjang % 5;
+         switch (panjangTeks) {
+            case 0: return teks.replaceAll("[aiueo]", "a");
+            case 1: return teks.replaceAll("[aiueo]", "e");
+            case 2: return teks.replaceAll("[aiueo]", "i");
+            case 3: return teks.replaceAll("[aiueo]", "o");
+            case 4: return teks.replaceAll("[aiueo]", "u");
+        } return null;
     }
 
-    public static String ubahVokal(String teks, char vokalBaru) {
-        String hasil = "";
-
-        for (int i = 0; i < teks.length(); i++) {
-            char c = teks.charAt(i);
-            if (isVokal(c)) {
-                hasil += vokalBaru;
-            } else {
-                hasil += c;
-            }
-        }
-
-        return hasil;
-    }
-
-    public static boolean isVokal(char c) {
-        c = Character.toLowerCase(c);
-        return (c == 'a' || c == 'i' || c == 'u' || c == 'e' || c == 'o');
+    private static String vokalBesar(String teks) {
+         int panjang = teks.length();
+         int panjangTeks = panjang % 5;
+         switch (panjangTeks) {
+            case 0: return teks.replaceAll("[AIUEO]", "A");
+            case 1: return teks.replaceAll("[AIUEO]", "E");
+            case 2: return teks.replaceAll("[AIUEO]", "I");
+            case 3: return teks.replaceAll("[AIUEO]", "O");
+            case 4: return teks.replaceAll("[AIUEO]", "U");
+        } return null;
     }
 }

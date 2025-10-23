@@ -1,38 +1,35 @@
-import java.util.Locale;
 import java.util.Scanner;
 
-public class Jurnal03 {
-
+public class Jurnal02 {
     public static void main(final String[] args) {
-        Locale.setDefault(Locale.US);
-
-        Scanner input = new Scanner(System.in);
-
-        double jari2 = input.nextDouble();
-        double tabung = input.nextDouble();
-        double air = input.nextDouble();
-
-
-        double volumeMaks = hitungTabung(jari2, tabung);
-        double volumeAir = hitungAir(jari2, air);
-        double persen = hitungPersen(air, tabung);
-
-  
-        System.out.printf("%.2f %.2f %.1f%%\n", volumeMaks, volumeAir, persen);
-
-        input.close();
+        Scanner s = new Scanner(System.in);
+        String lirik = s.nextLine();
+        String hasil1 = vokalKecil(lirik);
+        String hasil2 = vokalBesar(hasil1);
+        System.out.println(hasil2);
     }
 
-    public static double hitungTabung(double jari2, double tinggi) {
-        return 3.1416 * jari2 * jari2 * tinggi;
-    }
-    
-    public static double hitungAir(double jari2, double air) {
-        return 3.1416 * jari2 * jari2 * air;
+    private static String vokalKecil(String teks) {
+         int panjang = teks.length();
+         int panjangTeks = panjang % 5;
+         switch (panjangTeks) {
+            case 0: return teks.replaceAll("[aiueo]", "a");
+            case 1: return teks.replaceAll("[aiueo]", "e");
+            case 2: return teks.replaceAll("[aiueo]", "i");
+            case 3: return teks.replaceAll("[aiueo]", "o");
+            case 4: return teks.replaceAll("[aiueo]", "u");
+        } return null;
     }
 
-    public static double hitungPersen(double air, double tabung) {
-        return (air / tabung) * 100;
+    private static String vokalBesar(String teks) {
+         int panjang = teks.length();
+         int panjangTeks = panjang % 5;
+         switch (panjangTeks) {
+            case 0: return teks.replaceAll("[AIUEO]", "A");
+            case 1: return teks.replaceAll("[AIUEO]", "E");
+            case 2: return teks.replaceAll("[AIUEO]", "I");
+            case 3: return teks.replaceAll("[AIUEO]", "O");
+            case 4: return teks.replaceAll("[AIUEO]", "U");
+        } return null;
     }
 }
-
