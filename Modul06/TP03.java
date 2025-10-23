@@ -5,11 +5,9 @@ public class TP03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Baca nama bangun datar (1 baris)
+
         String namaBangun = scanner.nextLine();
         
-        // Baca satu baris lagi berisi bilangan, dipisah satu-satu pakai method tanpa array
-        // Karena larangan array, kita baca per kata menggunakan scanner baru
         String inputBilangan = scanner.nextLine();
         Scanner bilScanner = new Scanner(inputBilangan);
         
@@ -36,7 +34,6 @@ public class TP03 {
         scanner.close();
     }
     
-    // Method Persegi
     public static int luasPersegi(int sisi) {
         return sisi * sisi;
     }
@@ -44,7 +41,7 @@ public class TP03 {
         return 4 * sisi;
     }
     
-    // Method Persegi Panjang
+
     public static int luasPersegiPanjang(int panjang, int lebar) {
         return panjang * lebar;
     }
@@ -52,7 +49,6 @@ public class TP03 {
         return 2 * (panjang + lebar);
     }
     
-    // Method Segitiga siku-siku
     public static int luasSegitiga(int alas, int tinggi) {
         return (alas * tinggi) / 2;
     }
@@ -61,7 +57,6 @@ public class TP03 {
         return (int)(alas + tinggi + sisiMiring);
     }
     
-    // Method Lingkaran
     public static double luasLingkaran(int diameter) {
         double r = diameter / 2.0;
         return 3.14 * r * r;

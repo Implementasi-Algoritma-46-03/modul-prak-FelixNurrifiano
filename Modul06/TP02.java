@@ -12,7 +12,7 @@ public class TP02 {
         scanner.close();
     }
     
-    // Method untuk menghapus huruf vokal tanpa menggunakan array
+
     public static String hapusVokal(String input) {
         StringBuilder output = new StringBuilder();
         
@@ -26,7 +26,7 @@ public class TP02 {
         return output.toString();
     }
     
-    // Method untuk mengecek apakah karakter adalah huruf vokal
+
     public static boolean isVokal(char c) {
         c = Character.toLowerCase(c);
         return c == 'a' || c == 'i' || c == 'u' || c == 'e' || c == 'o';
