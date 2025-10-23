@@ -1,34 +1,31 @@
 import java.util.Scanner;
-
 public class TP01 {
 
     public static void main(final String[] args) {
-        Scanner input = new Scanner(System.in);
-        input.useLocale(java.util.Locale.US);  // <-- ini penting!
+       //input
+        Scanner s = new Scanner(System.in);
+        double r1 = s.nextDouble();
+        double r2 = s.nextDouble();
+        double r3 = s.nextDouble();
 
-        double R1 = input.nextDouble();
-        double R2 = input.nextDouble();
-        double R3 = input.nextDouble();
+        // proses
+        double c1 = f2c(r1);
+        double c2 = f2c(r2);
+        double c3 = f2c(r3);
 
-        double C1 = fahrenheitKeCelcius(R1);
-        double C2 = fahrenheitKeCelcius(R2);
-        double C3 = fahrenheitKeCelcius(R3);
+        double re1 = f2r(r1);
+        double re2 = f2r(r2);
+        double re3 = f2r(r3);
 
-        double Re1 = fahrenheitKeReamur(R1);
-        double Re2 = fahrenheitKeReamur(R2);
-        double Re3 = fahrenheitKeReamur(R3);
-
-        System.out.printf("%.2f %.2f %.2f\n", C1, C2, C3);
-        System.out.printf("%.2f %.2f %.2f\n", Re1, Re2, Re3);
-
-        input.close();
+        // Output
+        System.out.printf("Celcius: %.1f %.1f %.1f\n", c1, c2, c3);
+        System.out.printf("Reamur: %.2f %.2f %.2f\n", re1, re2, re3);
     }
 
-    public static double fahrenheitKeCelcius(double f) {
-        return (5.0 / 9.0) * (f - 32);
+    private static double f2c(double f2c) {
+        return (f2c - 32) * 5 / 9;
     }
-
-    public static double fahrenheitKeReamur(double f) {
-        return (4.0 / 9.0) * (f - 32);
+    private static double f2r(double f2r) {
+        return (f2r - 32) * 4 / 9;
     }
 }
