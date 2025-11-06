@@ -21,4 +21,5 @@ public class Jurnal02 {
         double rataRata = (double) total / hitung;
         System.out.printf("%.2f\n", rataRata);
     }
-
+}
+//bissmilah
