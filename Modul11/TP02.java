@@ -5,15 +5,17 @@ public class TP02 {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
-        int[] arr = new int[N];
+        ArrayList<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt();
+            list.add(sc.nextInt());
         }
 
-        Arrays.sort(arr);
-        for (int i = N - 1; i >= 0; i--) {
-            System.out.print(arr[i] + " ");
+  
+        list.sort(Collections.reverseOrder());
+
+        for (int num : list) {
+            System.out.print(num + " ");
         }
     }
 }
