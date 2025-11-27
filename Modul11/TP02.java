@@ -11,11 +11,11 @@ public class TP02 {
             list.add(sc.nextInt());
         }
 
-  
-        list.sort(Collections.reverseOrder());
+        Collections.sort(list, Collections.reverseOrder());
 
-        for (int num : list) {
-            System.out.print(num + " ");
+        for (int i = 0; i < N; i++) {
+            System.out.print(list.get(i));
+            if (i < N - 1) System.out.print(" ");
         }
     }
 }
