@@ -7,13 +7,13 @@ public class TP02 {
         int N = sc.nextInt();
         ArrayList<Integer> list = new ArrayList<>();
 
-        for (int i = 0; i < N; i++) {
+        while (sc.hasNextInt()) {
             list.add(sc.nextInt());
         }
 
         Collections.sort(list);
 
-        for (int i = N - 1; i >= 0; i--) {
+        for (int i = list.size() - 1; i >= 0; i--) {
             System.out.print(list.get(i));
             if (i > 0) System.out.print(" ");
         }
