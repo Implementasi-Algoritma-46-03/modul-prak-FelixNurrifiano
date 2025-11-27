@@ -5,17 +5,16 @@ public class TP02 {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
-        ArrayList<Integer> list = new ArrayList<>();
+        int[] arr = new int[N];
 
         for (int i = 0; i < N; i++) {
-            list.add(sc.nextInt());
+            arr[i] = sc.nextInt();
         }
 
-        Collections.sort(list);
+        Arrays.sort(arr); // ascending
 
         for (int i = N - 1; i >= 0; i--) {
-            System.out.print(list.get(i));
-            if (i > 0) System.out.print(" ");
+            System.out.print(arr[i] + " ");
         }
     }
 }
