@@ -1,6 +1,34 @@
+import java.util.Scanner;
+
 public class TP03 {
 
-    public static void main(final String[] args) {
-        // Kerjakan soalnya di sini
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        // Input array
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int key = sc.nextInt();
+        int index = -1;
+
+        // Linear Search
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == key) {
+                index = i;
+                break;
+            }
+        }
+
+        // Output
+        if (index != -1) {
+            System.out.println("Ditemukan di indeks ke-" + index);
+        } else {
+            System.out.println("Tidak ditemukan");
+        }
     }
 }
