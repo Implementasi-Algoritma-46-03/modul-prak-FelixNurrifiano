@@ -11,13 +11,12 @@ public class Jurnal03 {
             inventaris[i] = input.next();
         }
 
-
         String key = input.next();
-
 
         for (int i = 1; i < n; i++) {
             String temp = inventaris[i];
             int j = i - 1;
+
             while (j >= 0 && inventaris[j].compareTo(temp) > 0) {
                 inventaris[j + 1] = inventaris[j];
                 j--;
@@ -25,26 +24,24 @@ public class Jurnal03 {
             inventaris[j + 1] = temp;
         }
 
-
         int left = 0;
         int right = n - 1;
-        int foundIndex = -1; 
+        int foundIndex = -1;
 
         while (left <= right) {
             int mid = (left + right) / 2;
-            int result = key.compareTo(inventaris[mid]);
+            int compareResult = key.compareTo(inventaris[mid]);
 
-            if (result == 0) { 
+            if (compareResult == 0) {
                 foundIndex = mid;
                 break;
-            } else if (result > 0) { 
+            } else if (compareResult > 0) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
         }
 
-  
         if (foundIndex != -1) {
             System.out.println("Ditemukan di indeks ke-" + foundIndex);
         } else {
