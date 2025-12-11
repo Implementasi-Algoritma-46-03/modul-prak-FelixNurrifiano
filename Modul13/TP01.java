@@ -28,5 +28,6 @@ public class TP01 {
             if (i < 9) System.out.print(" ");
         }
         System.out.println();
+        int s = 3;
     }
 }
